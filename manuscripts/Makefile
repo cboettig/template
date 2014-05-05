@@ -1,8 +1,3 @@
-BIBFILE = components/references.bib
-CSL = components/methods-in-ecology-and-evolution.csl
-TEMPLATE = components/elsarticle.latex
-
-
 all:
 	make tutorial.md
 	make ../README.md

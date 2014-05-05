@@ -15,7 +15,8 @@ Installation requirements
 - pandoc (>= 1.12), pandoc-citeproc
 - LaTeX environment
 
-
+**Note**: Pandoc options (bib file, csl file, etc) are all set in the
+(debian control formatted) file [components/config_pandoc.txt].
 
 Manuscripts in this package are written in [knitr]'s R Markdown format
 (`.Rmd` files), and compiled into PDFs using [pandoc] with [LaTeX]. Thanks
@@ -31,7 +32,7 @@ freeing the writer to just write.
 [knitr]: http://yihui.name/knitr
 [pandoc]: http://johnmacfarlane.net/pandoc/
 [LaTeX]: http://www.latex-project.org/
-
+[components/config_pandoc.txt]: http://github.com/cboettig/template/tree/master/manuscripts/components/config_pandoc.txt
 
 Caching
 -------
