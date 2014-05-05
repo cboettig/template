@@ -26,8 +26,8 @@ manuscript.pdf: manuscript.md
 clear-cache:
 	rm -rf components/cache
 
-## FIXME use default R utils for this 
 restore-cache:
+	Rscript components/restore-cache.R
 
 clean:
 
