@@ -3,6 +3,8 @@
 %\VignetteIndexEntry{An Introduction to the template package}
 -->
 
+[![Build Status](https://travis-ci.org/cboettig/template.svg)](https://travis-ci.org/cboettig/template)
+
 template
 ========
 
