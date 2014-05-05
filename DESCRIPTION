@@ -1,6 +1,8 @@
-Package: template 
-Title: Template repository for a research project structured as an R package on Github 
-Description: Template repository for a research project structured as an R package on Github 
+Package: template
+Title: Template repository for a research project structured as an R package on
+    Github
+Description: Template repository for a research project structured as an R
+    package on Github
 Version: 0.0-1
 License: CC0
 Author: Carl Boettiger
@@ -8,5 +10,5 @@ Maintainer: Carl Boettiger, <cboettig@gmail.com>
 URL: https://github.com/cboettig/template
 BugReports: https://github.com/cboettig/template/issues
 Suggests:
-  knitr,
-  testthat
+    knitr,
+    testthat
