@@ -24,9 +24,15 @@ documentation of the manuscript.  See [manuscripts/README] for more
 details about this functionality.  
 
 
+**Note**: This README is created programmatically from [manuscripts/tutorial.Rmd],
+so edit that file and not the README itself.  (This lets the README include 
+executed R code and keeps it in sync with an R package vignette).  
 
-[manuscripts]: http://github.com/cboettig/template/manuscripts/
-[manuscripts/README]: http://github.com/cboettig/template/manuscripts/README.md
+
+
+[manuscripts]: http://github.com/cboettig/template/tree/master/manuscripts/
+[manuscripts/README]: http://github.com/cboettig/template/tree/master/manuscripts/README.md
+[manuscripts/tutorial.Rmd]: http://github.com/cboettig/template/tree/master/manuscripts/tutorial.Rmd
 [R package]: http://cran.r-project.org/doc/manuals/R-exts.html "Writing R Extensions"
 [pandoc]: http://johnmacfarlane.net/pandoc 
 [Github]: http://github.com

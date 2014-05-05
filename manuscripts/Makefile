@@ -14,7 +14,7 @@ tutorial.md: tutorial.Rmd
 	Rscript -e 'require(knitr); opts_knit[["set"]](upload.fun = imgur_upload); knit("tutorial.Rmd")'
 
 ../README.md: tutorial.md
-	cp tutorial.md ../README.md
+	mv tutorial.md ../README.md
 	Rscript components/github_highlighting.R ../README.md
 
 ../vignettes/tutorial.Rmd: tutorial.Rmd
