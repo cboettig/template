@@ -2,9 +2,11 @@
 args <- commandArgs(TRUE)
 file <- args[1]
 
+## FIXME add second argument to handle figure types
+
 ## Set the paths for cache and figure
-library(methods)
-library(knitr)
+library("methods")
+library("knitr")
 basename <- gsub(".Rmd", "", file) # knitr:::knit_concord$get('infile')) 
 opts_chunk$set(fig.path = paste("components/figure/", basename, "-", sep=""),
                cache.path = paste("components/cache/", basename, "/", sep=""))
@@ -21,13 +23,4 @@ output <- paste(basename, ".md", sep="")
 ## Knit
 knit(file, output)
 
-
-## FIXME Makefile would be happier keeping these as separate targets, which 
-## would permit making the markdown and the tex seperately, and facilitate debugging
-
-## Call pandoc
-pandoc(output, format="latex", config="components/pandoc_config.txt")
-
-# Remove temporary file.
-unlink(output)
 

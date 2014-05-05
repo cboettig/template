@@ -16,11 +16,12 @@ tutorial.md: tutorial.Rmd
 	cp tutorial.Rmd ../vignettes/
 
 
+manuscript.md: manuscript.Rmd
+	Rscript components/knit.R manuscript.Rmd	
 
-
-manuscript.pdf: manuscript.Rmd
-	Rscript components/make_pdf.R manuscript.Rmd	
-
+manuscript.pdf: manuscript.md
+	Rscript components/pandoc.R manuscript.md	
+	
 
 clear-cache:
 	rm -rf components/cache

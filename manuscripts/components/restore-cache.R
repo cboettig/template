@@ -1,5 +1,7 @@
 #!/usr/bin/R
 
+library("utils")
+
 # restore cache file
 archive <- "template-manuscript-cache.tar.gz"
 
