@@ -42,13 +42,15 @@ though inline equations need `\(` syntax, which means escaping
 the backtick in the markdown, such as: \\(F = ma \\).
 
 
+Creating project landing page
+------------------------------
 
-Getting started
-----------------
+Consider using the `README.md` from the project's master branch as
+a landing page for the project (e.g. appear at the project's base
+url, `http://io.carlboettiger.info/<reponame>`.
 
-Consider copying the README.md on the master branch to index.md on this
-branch to provide an overview of this project, adding yaml layout if
-necessary; e.g.
+To do so automatically, just grab the file and rename it `index.md`,
+adding yaml layout if necessary; e.g.
 
 ```bash
 wget -O index.md https://raw.githubusercontent.com/cboettig/template/master/README.md
