@@ -8,16 +8,7 @@ layout: page
 
 ## graphics
 
-<!--
-We don't need to set the baseurl to the repository's production URL:
-
-```{r }
-#opts_knit$set(base.url="http://cboettig.github.io/template/")
-```
--->
-
-
-
+We can render SVGs without any further configuration: 
 
 ```{r dev="svg"}
 library(ggplot2)

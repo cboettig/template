@@ -38,7 +38,8 @@ ignores that delimiter)
 
 $$ \int_0^{\infty} f(x) P(x) dx $$
 
-though inline equations need `\(` syntax, like \(F = ma \).
+though inline equations need `\(` syntax, which means escaping
+the backtick in the markdown, such as: \\(F = ma \\).
 
 
 
