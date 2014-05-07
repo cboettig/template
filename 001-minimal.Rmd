@@ -8,10 +8,16 @@ layout: page
 
 ## graphics
 
+<!--
+We don't need to set the baseurl to the repository's production URL:
 
 ```{r }
-opts_knit$set(base.url="http://cboettig.github.io/")
+#opts_knit$set(base.url="http://cboettig.github.io/template/")
 ```
+-->
+
+
+
 
 ```{r dev="svg"}
 library(ggplot2)
@@ -25,6 +31,8 @@ Yes I know the value of pi is `r pi`, and 2 times pi is `r 2*pi`.
 
 ## math
 
-Sigh. You cannot live without math equations. OK, here we go: $\alpha+\beta=\gamma$. 
+Sigh. You cannot live without math equations. OK, here we go: 
+
+$$\alpha + \beta=\gamma$$  
 
 

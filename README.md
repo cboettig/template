@@ -29,15 +29,16 @@ of `cboettig.github.io/<reponame>`.
 This branch then contains its own copies of the labnotebook
 `_layout` and `_includes` directories, which point to the `www` subdomain
 for the css assets.  The `_config.yml` is quite minimal, just using
-`redcarpet` to provide github-like parsing.  This means we lose
-the ability to have pandoc-like citations, but can still add mathjax
-equations by following the mathjax syntax `\[`, provided we protect it
-inside a `div` or something, like this:
+`redcarpet` to provide github-like parsing.
 
-<div>
-\[ \int_0^{\infty} f(x) P(x) dx \]
-</div>
 
+Using redcarpet means we lose the ability to have pandoc-like citations,
+but can still add mathjax equations with `$$` (since markdown parser
+ignores that delimiter)
+
+$$ \int_0^{\infty} f(x) P(x) dx $$
+
+though inline equations need `\(` syntax, like \(F = ma \).
 
 
 
