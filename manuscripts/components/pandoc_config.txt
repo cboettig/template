@@ -1,6 +1,0 @@
-t: latex
-bibliography: components/references.bib
-csl: components/methods-in-ecology-and-evolution.csl
-template: components/elsarticle.latex
-latex-engine: pdflatex
-output: manuscript.pdf
