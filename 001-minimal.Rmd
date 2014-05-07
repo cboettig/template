@@ -1,0 +1,30 @@
+---
+layout: page
+
+---
+
+# A minimal R Markdown example
+
+
+## graphics
+
+
+```{r }
+opts_knit$set(base.url="http://cboettig.github.io/")
+```
+
+```{r dev="svg"}
+library(ggplot2)
+qplot(mpg, wt, data=mtcars, colour=cyl)
+qplot(mpg, wt, data=mtcars, size=cyl)
+```
+
+## inline code
+
+Yes I know the value of pi is `r pi`, and 2 times pi is `r 2*pi`.
+
+## math
+
+Sigh. You cannot live without math equations. OK, here we go: $\alpha+\beta=\gamma$. 
+
+
