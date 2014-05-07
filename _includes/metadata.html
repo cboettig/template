@@ -1,0 +1,33 @@
+<!-- HTML5 metadata -->
+<meta name="keywords" content="{{ page.tags | join: ', ' }}" />
+<meta name="description" content="{{ page.description }}" />
+<meta name="resource_type" content="website"/> 
+<!-- RDFa Metadata (in DublinCore) -->
+<meta property="dc:title" content="{{ page.title }}" />
+<meta property="dc:creator" content="{{ site.author.name }}" />
+<meta property="dc:date" content="{{ page.date }}" />
+<meta property="dc:format" content="text/html" />
+<meta property="dc:language" content="en" />
+<meta property="dc:identifier" content="{{ page.url }}" />
+<meta property="dc:rights" content="CC0" />
+<meta property="dc:source" content="{{ site.title }}" />
+<meta property="dc:subject" content="Ecology" /> 
+<meta property="dc:type" content="website" /> 
+<!-- RDFa Metadata (in OpenGraph) -->
+<meta property="og:title" content="{{ page.title }}" />
+<meta property="og:author" content="{{site.url}}/index.html#me" />  <!-- Should be Liquid? URI? -->
+<meta property="http://ogp.me/ns/profile#first_name" content="{{ site.author.givenName }}"/>
+<meta property="http://ogp.me/ns/profile#last_name" content="{{ site.author.familyName }}"/>
+<meta property="http://ogp.me/ns/article#published_time" content="{{ page.date }}" />
+<meta property="og:site_name" content="{{ site.title }}" /> <!-- Same as dc:source? -->
+<meta property="og:url" content="{{site.url}}{{ page.url }}" />
+<meta property="og:type" content="website" /> 
+<!-- Google Scholar Metadata -->
+<meta name="citation_author" content="{{ site.author.name }}"/>
+<meta name="citation_date" content="{{ page.date }}"/>
+<meta name="citation_title" content="{{page.title}}"/>
+<meta name="citation_journal_title" content="{{site.title}}"/>
+<!--NOTE: see also the COinS Metadata in span element in footer -->
+
+
+

@@ -1,0 +1,48 @@
+<!-- Navbar  ================================================== -->
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://www.carlboettiger.info/README.html"><i class="icon-info-sign" alt="info"></i></span></a>
+    </div>
+
+ <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+          <li {% if page.url == "http://www.carlboettiger.info/index.html" %} class="active" {% endif %} >
+          <a href="http://www.carlboettiger.info/index.html">Home</a></li>
+          <li {% if page.url == "http://www.carlboettiger.info/vita.html" %} class="active" {% endif %} >
+          <a href="http://www.carlboettiger.info/vita.html">Vita</a></li>
+          <li {% if page.url == "http://www.carlboettiger.info/research.html" %} class="active" {% endif %} >
+          <a href="http://www.carlboettiger.info/research.html">Research</a></li>
+          <li {% if page.url == "http://www.carlboettiger.info/teaching.html" %} class="active" {% endif %} >
+          <a href="http://www.carlboettiger.info/teaching.html">Teaching</a></li>
+          <li {% if page.url == "http://www.carlboettiger.info/community.html" %} class="active"{% endif %} >
+          <a href="http://www.carlboettiger.info/community.html">Community</a></li>
+          <li {% if page.url == "http://www.carlboettiger.info/lab-notebook.html" %} class="active"{% endif %} >
+          <a href="http://www.carlboettiger.info/lab-notebook.html">Lab Notebook</a></li>
+
+        </ul>
+
+      <!-- Search site using Google's index -->
+        <form class="navbar-form navbar-right" role="search" method="get" action="http://google.com/search">
+          <div class="form-group">
+            <input type="hidden" name="q" value="site:carlboettiger.info" />
+            <input type="text" class="form-control search-query" name="q" placeholder="Search"/>
+          </div>
+          <button class="btn btn-mini" type="submit"><i class="icon-search"></i></button> 
+       </form>
+
+    </div><!--/.nav-collapse -->
+  </div> <!-- /container -->
+</nav>
+
+

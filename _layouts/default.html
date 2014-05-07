@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  {% include head.html %}
+  <body prefix="dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/"> 
+    {% include navbar.html %}
+    <div class="container"> <!-- Responsive grid layout, doesn't jump to full-width --> 
+
+{% include header.html %}
+
+{{ content }}
+
+{% include footer.html %}
+{% include javascript.html %}
+{% include analytics.html %}
+
+    </div>
+  </body>
+</html>
+
+    

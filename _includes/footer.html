@@ -1,0 +1,46 @@
+<footer class="footer">
+
+<!--************** FOAF information to social networks ***************************** -->
+  <div class="row">
+    <div class="col-md-3 col-xs-4 socialicons" style="font-size:20px" typeof="foaf:Person" about="{{site.url}}#me">
+      <p>
+          <script type="text/javascript" src="http://www.carlboettiger.info/assets/js/obfuscate-email-link.js" language="javascript"></script> 
+
+          <a rel="foaf:account" alt="twitter" href="https://twitter.com/{{site.author.twitter}}" 
+             onclick="recordOutboundLink(this, 'Outbound Links', 'Twitter'); 
+             return false;"><span class="showtooltip" title="follow me on twitter (reading, discussing)"><i class="icon-twitter"></i></span></a> 
+
+          <a rel="foaf:account" alt="github" href="https://github.com/{{site.author.github}}" 
+             onclick="recordOutboundLink(this, 'Outbound Links', 'Github'); 
+             return false;"><span class="showtooltip" title="follow me on Github (code, research)"><i class="icon-github"></i></span></a>
+      <!--
+      -->
+      <a alt="rss" rel="foaf:weblog", type="application/atom+xml" href="http://www.carlboettiger.info/blog.xml"  
+         class="showtooltip" title="RSS feeds for my blog-style entries. See the feed on my lab notebook (/atom.xml) to follow all entries instead." 
+         onclick="recordOutboundLink(this, 'Outbound Links', 'RSS'); 
+         return false;"><i class="icon-rss"></i></a>
+       </p>
+    </div>
+
+    
+    <!--**************** End social links **************************** -->
+
+
+    <div class="col-md-4 col-md-offset-1 col-xs-4">
+      <p><a onclick="recordOutboundLink(this, 'Outbound Links', 'ONS_claim'); return false;" href="http://onsclaims.wikispaces.com/"><img src="http://www.carlboettiger.info/assets/img/ons-aci2-icon.svg" alt="ONS" class="showtooltip" title="An Open Notebook Science (ONS) project claim: Entry provides all content (AC) immediately (I) or without significant delay.  See link for details"/></a></p>
+    </div>
+
+
+    <div class="col-md-3 col-md-offset-1 col-xs-4">
+      <p>
+      <a rel="license" property="http://creativecommons.org/ns#license" href="http://creativecommons.org/publicdomain/zero/1.0/" onclick="recordOutboundLink(this, 'Outbound Links', 'CC0'); return false;"><img src="http://www.carlboettiger.info/assets/img/cc-zero.svg" alt="CC0"/></a> 
+      </p>
+    </div>
+  </div>
+
+
+  {% include COINS.html %}
+</footer>
+
+
+
