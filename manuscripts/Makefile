@@ -1,19 +1,7 @@
 all:
-	make tutorial.md
-	make ../README.md
-	make ../vignettes/tutorial.Rmd
 	make manuscript.pdf
+	make ../README.md
 
-# Tutorial, used as README and vignette
-tutorial.md: tutorial.Rmd 
-	Rscript -e 'require(knitr); opts_knit[["set"]](upload.fun = imgur_upload); knit("tutorial.Rmd")'
-
-../README.md: tutorial.md
-	mv tutorial.md ../README.md
-	Rscript components/github_highlighting.R ../README.md
-
-../vignettes/tutorial.Rmd: tutorial.Rmd
-	cp tutorial.Rmd ../vignettes/
 
 
 manuscript.md: manuscript.Rmd
@@ -22,6 +10,9 @@ manuscript.md: manuscript.Rmd
 manuscript.pdf: manuscript.md
 	Rscript components/pandoc.R manuscript.md	
 	
+# Note: This manuscript.md has pdf graphics and no references, 
+# not good for Github display. Should probably be deleted after use.   
+
 
 clear-cache:
 	rm -rf components/cache
@@ -30,8 +21,14 @@ restore-cache:
 	Rscript components/restore-cache.R
 
 clean:
+	rm -f manuscript.md manuscript.pdf 
 
 
-# Doesn't reset ../vignettes/* or ../README.md
-clean-reset:
-	rm -f manuscript.md manuscript.pdf tutorial.md 
+
+
+# Make package README from vignettes/tutorial (makefile command here just for convenience; since Makefiles in `vignettes/` are intended for building vignette output by tex etc, 
+../README.md: ../vignettes/tutorial.Rmd
+	Rscript -e 'require(knitr); opts_knit[["set"]](upload.fun = imgur_upload); knit("../vignettes/tutorial.Rmd", "../README.md")'
+	Rscript components/github_highlighting.R ../README.md
+
+
