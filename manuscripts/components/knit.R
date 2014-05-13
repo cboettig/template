@@ -10,7 +10,7 @@ library("knitr")
 basename <- gsub(".Rmd", "", file) # knitr:::knit_concord$get('infile')) 
 opts_chunk$set(fig.path = paste("components/figure/", basename, "-", sep=""),
                cache.path = paste("components/cache/", basename, "/", sep=""))
-opts_chunk$set(cache = 1)
+opts_chunk$set(cache = 2)
 opts_chunk$set(tidy=FALSE, warning=FALSE, message=FALSE, comment = NA, verbose = TRUE)
 
 # PDF-based figures
