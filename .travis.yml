@@ -18,9 +18,9 @@ on_failure:
 
 env:
  global:
-   - R_BUILD_ARGS="--no-manual"
-   - R_CHECK_ARGS="--as-cran --no-manual"
-   - BOOTSTRAP_LATEX="1"
+   - R_BUILD_ARGS=""
+   - R_CHECK_ARGS="--as-cran"
+   - BOOTSTRAP_LATEX="" # set to 1 only if we need more recent tex envir (slow!)
 
 notifications:
   email:
