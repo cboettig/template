@@ -15,7 +15,15 @@ script: ./travis-tool.sh run_tests
 on_failure:
   - ./travis-tool.sh dump_logs
 
+
+env:
+ global:
+   - CRAN: http://cran.rstudio.com
+   - R_BUILD_ARGS= "" # Default is: "--no-build-vignettes --no-manual"
+   - R_CHECK_ARGS= "--as-cran" # Default is: "--no-build-vignettes --no-manual --as-cran"
+   - BOOTSTRAP_LATEX=""
+
 notifications:
   email:
     on_success: change
-    on_failure: change
+    on_failure: always 
