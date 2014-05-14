@@ -12,4 +12,5 @@ BugReports: https://github.com/cboettig/template/issues
 VignetteBuilder: knitr
 Suggests:
     knitr (>= 1.5),
+    httr,
     testthat

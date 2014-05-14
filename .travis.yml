@@ -7,8 +7,10 @@ before_install:
   - chmod 755 ./travis-tool.sh
   - ./travis-tool.sh bootstrap
 
+# install_aptget is quicker & more robust than install_deps
+# devtools (imports httr) & testthat are already installed as binaries...
 install:
-  - ./travis-tool.sh install_aptget r-cran-knitr
+  - ./travis-tool.sh install_aptget r-cran-knitr 
   - ./travis-tool.sh install_deps
 
 script: ./travis-tool.sh run_tests
