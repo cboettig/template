@@ -10,7 +10,8 @@ file <- args[1]
 library("knitr")
 
 ## Call pandoc
-knitr::pandoc(file, format="latex", config="components/pandoc_config.txt")
+knitr::pandoc(file, format = "latex", ext = c("pdf", "tex"), 
+              config = "components/pandoc_config.txt")
 
 # Note that path is relative to where the Rscript is called
 # (manuscripts/), not where the source script lives (manuscripts/components)
