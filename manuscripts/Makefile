@@ -1,20 +1,32 @@
+# Fill these out
+MANUSCRIPT=manuscript
+BIBLIO=components/references.bib
+CSL=components/methods-in-ecology-and-evolution.csl
+TEMPLATE=components/elsarticle.latex
+
+
 all:
 	make install
 	make restore-cache
-	make manuscript.pdf
-	make clean
+	make $(MANUSCRIPT).pdf
+	make $(MANUSCRIPT).tex
 	make ../README.md
 
 install: components/install.R
 	Rscript components/install.R
 
-manuscript.md: manuscript.Rmd
-	Rscript components/knit.R manuscript.Rmd	
+$(MANUSCRIPT).md: $(MANUSCRIPT).Rmd
+	Rscript components/knit.R $(MANUSCRIPT).Rmd	
 
-manuscript.pdf: manuscript.md
-	Rscript components/pandoc.R manuscript.md	
-# Note: This manuscript.md has pdf graphics and no references, 
-# not good for Github display. Should probably be deleted after use.   
+
+## Customize template, latex engine, etc here
+$(MANUSCRIPT).pdf: $(MANUSCRIPT).md
+	pandoc -o $(MANUSCRIPT).pdf --template=$(TEMPLATE) --biblio $(BIBLIO) --csl $(CSL) $(MANUSCRIPT).md
+
+$(MANUSCRIPT).tex: $(MANUSCRIPT).md
+	pandoc -o $(MANUSCRIPT).tex --template=$(TEMPLATE) --biblio $(BIBLIO) --csl $(CSL) $(MANUSCRIPT).md
+
+
 
 # Only runs if cache has been cleared
 components/cache: components/restore-cache.R
@@ -28,7 +40,7 @@ clear-cache:
 	rm -rf components/cache
 
 clean:
-	rm -f manuscript.md 
+	rm -f $(MANUSCRIPT).md 
 
 
 # Non portable, just for me to update the source cache
