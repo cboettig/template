@@ -1,8 +1,4 @@
-# Fill these out
 MANUSCRIPT=manuscript
-BIBLIO=components/references.bib
-CSL=components/methods-in-ecology-and-evolution.csl
-TEMPLATE=components/elsarticle.latex
 
 
 all:
@@ -21,10 +17,10 @@ $(MANUSCRIPT).md: $(MANUSCRIPT).Rmd
 
 ## Customize template, latex engine, etc here
 $(MANUSCRIPT).pdf: $(MANUSCRIPT).md
-	pandoc -o $(MANUSCRIPT).pdf --template=$(TEMPLATE) --biblio $(BIBLIO) --csl $(CSL) $(MANUSCRIPT).md
+	pandoc -o $(MANUSCRIPT).pdf $(MANUSCRIPT).md
 
 $(MANUSCRIPT).tex: $(MANUSCRIPT).md
-	pandoc -o $(MANUSCRIPT).tex --template=$(TEMPLATE) --biblio $(BIBLIO) --csl $(CSL) $(MANUSCRIPT).md
+	pandoc -o $(MANUSCRIPT).tex  $(MANUSCRIPT).md
 
 
 restore-cache:  

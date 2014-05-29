@@ -1,4 +1,4 @@
-\documentclass[author-year, $layout$]{elsarticle} %review=doublespace preprint=single 5p=2 column
+\documentclass[author-year, $layout$]{$documentclass$} %review=doublespace preprint=single 5p=2 column
 %%% Begin My package additions %%%%%%%%%%%%%%%%%%%
 \usepackage[hyphens]{url}
 \usepackage{lineno} % add 

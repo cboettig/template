@@ -21,10 +21,30 @@ address:
       Full address of First Coauthor
 
 abstract: | 
+          Write the abstract of the paper here
 
 
+bibliography: components/references.bib
+csl: components/ecology.csl
+template: components/elsarticle.latex
+documentclass: components/elsarticle.cls
 
 ---
 
-A citation to @knitr
+A citation to @knitr1
+
+```{r}
+library("knitcitations")
+options(citation_format = "pandoc")
+```
+
+A dynamic citation to `r citet("10.1098/rspb.2013.1372")`.  
+
+
+# References
+
+```{r include=FALSE, echo=FALSE, results="hide"}
+citet(citation("knitr")) # a citation that wasn't added dyanmically above
+write.bibtex("components/references.bib")
+```
 
