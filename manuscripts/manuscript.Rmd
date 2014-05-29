@@ -27,13 +27,37 @@ abstract: |
 bibliography: components/references.bib
 csl: components/ecology.csl
 template: components/elsarticle.latex
-documentclass: components/elsarticle.cls
+documentclass: components/elsarticle
 
+output: 
+  pdf_document:
+    keep_tex: true
 ---
 
-A citation to @knitr1
 
-```{r}
+```{r dependencies, include=FALSE}
+#source("components/install.R")
+```
+
+```{r caching, include=FALSE}
+library("methods")
+library("knitr")
+basename <- "manuscript"
+opts_chunk$set(fig.path = paste("components/figure/", basename, "-", sep=""),
+               cache.path = paste("components/cache/", basename, "/", sep=""))
+opts_chunk$set(cache = 2)
+opts_chunk$set(tidy=FALSE, warning=FALSE, message=FALSE, 
+               comment = NA, verbose = TRUE, echo=FALSE)
+
+# PDF-based figures
+opts_chunk$set(dev='pdf')
+```
+
+
+A citation to @Xie2013
+
+```{r include=FALSE}
+library("rmarkdown")
 library("knitcitations")
 options(citation_format = "pandoc")
 ```
@@ -45,6 +69,6 @@ A dynamic citation to `r citet("10.1098/rspb.2013.1372")`.
 
 ```{r include=FALSE, echo=FALSE, results="hide"}
 citet(citation("knitr")) # a citation that wasn't added dyanmically above
-write.bibtex("components/references.bib")
+write.bibtex(file="components/references.bib")
 ```
 

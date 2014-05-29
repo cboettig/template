@@ -4,27 +4,33 @@ MANUSCRIPT=manuscript
 all:
 	make install
 	make restore-cache
-	make $(MANUSCRIPT).pdf
-	make $(MANUSCRIPT).tex
+	make render
 	make ../README.md
 
 install: components/install.R
 	Rscript components/install.R
+	make library
 
-
-$(MANUSCRIPT).md: $(MANUSCRIPT).Rmd
-	Rscript components/knit.R $(MANUSCRIPT).Rmd	
-
-## Customize template, latex engine, etc here
-$(MANUSCRIPT).pdf: $(MANUSCRIPT).md
-	pandoc -o $(MANUSCRIPT).pdf $(MANUSCRIPT).md
-
-$(MANUSCRIPT).tex: $(MANUSCRIPT).md
-	pandoc -o $(MANUSCRIPT).tex  $(MANUSCRIPT).md
-
+library:
+	Rscript -e 'packrat::packify()'
+	Rscript -e 'packrat::restore()'
 
 restore-cache:  
 	make components/cache
+
+render: 
+	Rscript -e "rmarkdown::render('$(MANUSCRIPT).Rmd')"
+
+
+
+## These knit and pandoc calls depricated by rmarkdown::render
+$(MANUSCRIPT).md: $(MANUSCRIPT).Rmd
+	Rscript components/knit.R $(MANUSCRIPT).Rmd	
+$(MANUSCRIPT).pdf: $(MANUSCRIPT).md
+	pandoc -o $(MANUSCRIPT).pdf $(MANUSCRIPT).md
+$(MANUSCRIPT).tex: $(MANUSCRIPT).md
+	pandoc -o $(MANUSCRIPT).tex  $(MANUSCRIPT).md
+
 	
 clean:
 	rm -rf $(MANUSCRIPT).md 

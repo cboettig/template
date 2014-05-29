@@ -1,16 +1,24 @@
 PackratFormat: 1.1
-PackratVersion: 0.1.0
+PackratVersion: 0.1.0.99
 RVersion: 3.1.0
 Repos: http://cran.rstudio.com/
 
-Package: RCurl
+Package: bibtex
 Source: CRAN
-Version: 1.95-4.1
-Requires: bitops
+Version: 0.3-6
 
 Package: bitops
 Source: CRAN
 Version: 1.0-6
+
+Package: devtools
+Source: github
+Version: 1.5
+Requires: httr, RCurl, memoise, whisker, evaluate, digest
+GithubRepo: devtools
+GithubUsername: hadley
+GithubRef: master
+GithubSha1: b6fda8144de4b145197c6d38aa6a1bb839678a5c
 
 Package: digest
 Source: CRAN
@@ -38,19 +46,34 @@ GithubUsername: hadley
 GithubRef: master
 GithubSha1: 7e897fcd6b9e02756ce1ebd33c7c04ac3273a416
 
-Package: knitr
+Package: knitcitations
 Source: github
-Version: 1.5.32
-Requires: evaluate, digest, formatR, highr, markdown, stringr
-GithubRepo: knitr
-GithubUsername: yihui
+Version: 0.6-0
+Requires: knitr, bibtex, RefManageR, xtable, RCurl, XML, httr
+GithubRepo: knitcitations
+GithubUsername: cboettig
 GithubRef: master
-GithubSha1: c3716ee5b980af595dd0f3eeef3e34092f5a86ca
+GithubSha1: f7a77a81b413501e131dbbf212974fdde7201fc9
+
+Package: knitr
+Source: CRAN
+Version: 1.6
+Requires: evaluate, digest, formatR, highr, markdown, stringr
+
+Package: lubridate
+Source: CRAN
+Version: 1.3.3
+Requires: plyr, stringr, memoise
 
 Package: markdown
 Source: CRAN
 Version: 0.7
 Requires: mime
+
+Package: memoise
+Source: CRAN
+Version: 0.2.1
+Requires: digest
 
 Package: mime
 Source: CRAN
@@ -58,11 +81,43 @@ Version: 0.1.1
 
 Package: packrat
 Source: github
-Version: 0.1.0
+Version: 0.1.0.99
 GithubRepo: packrat
 GithubUsername: rstudio
 GithubRef: master
-GithubSha1: 0e360b5c15d319b796a1d4fdc83a2c5ae7a67333
+GithubSha1: f9f35fb50ad3e1909e9873eec0bb3c715e16c5ca
+
+Package: plyr
+Source: CRAN
+Version: 1.8.1
+Requires: Rcpp
+
+Package: Rcpp
+Source: CRAN
+Version: 0.11.1
+
+Package: RCurl
+Source: CRAN
+Version: 1.95-4.1
+Requires: bitops
+
+Package: RefManageR
+Source: CRAN
+Version: 0.8.1
+Requires: XML, RCurl, RJSONIO, plyr, bibtex, lubridate, stringr
+
+Package: RJSONIO
+Source: CRAN
+Version: 1.2-0.2
+
+Package: rmarkdown
+Source: github
+Version: 0.2.15
+Requires: knitr, yaml
+GithubRepo: rmarkdown
+GithubUsername: rstudio
+GithubRef: master
+GithubSha1: 154a17fbc14ca415f633924105613cbb91b8eae3
 
 Package: stringr
 Source: CRAN
@@ -75,3 +130,19 @@ GithubRepo: template
 GithubUsername: cboettig
 GithubRef: master
 GithubSha1: df8a0a68c3a1db6f78fd0245dad3f85b7f27742e
+
+Package: whisker
+Source: CRAN
+Version: 0.3-2
+
+Package: XML
+Source: CRAN
+Version: 3.98-1.1
+
+Package: xtable
+Source: CRAN
+Version: 1.7-3
+
+Package: yaml
+Source: CRAN
+Version: 2.1.11
