@@ -35,9 +35,6 @@ output:
 ---
 
 
-```{r dependencies, include=FALSE}
-#source("components/install.R")
-```
 
 ```{r caching, include=FALSE}
 library("methods")
