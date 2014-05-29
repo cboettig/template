@@ -12,8 +12,6 @@ install: components/install.R
 	make library
 
 library:
-	Rscript -e 'packrat::packify()'
-	Rscript -e 'packrat::restore()'
 
 restore-cache:  
 	make components/cache
