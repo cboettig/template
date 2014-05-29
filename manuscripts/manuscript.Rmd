@@ -31,7 +31,7 @@ documentclass: components/elsarticle
 
 output: 
   pdf_document:
-    keep_tex: true
+    keep_tex: false
 ---
 
 
