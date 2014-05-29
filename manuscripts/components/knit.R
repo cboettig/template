@@ -1,4 +1,7 @@
 #!/usr/bin/Rscript
+library("methods")
+library("knitr")
+
 args <- commandArgs(TRUE)
 
 if(!is.na(args[1])){
@@ -11,8 +14,6 @@ if(!is.na(args[1])){
 ## FIXME add second argument to handle figure types
 
 ## Set the paths for cache and figure
-library("methods")
-library("knitr")
 basename <- gsub(".Rmd", "", infile) # knitr:::knit_concord$get('infile')) 
 opts_chunk$set(fig.path = paste("components/figure/", basename, "-", sep=""),
                cache.path = paste("components/cache/", basename, "/", sep=""))

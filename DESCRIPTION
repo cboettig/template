@@ -13,4 +13,5 @@ VignetteBuilder: knitr
 Suggests:
     knitr (>= 1.5),
     httr,
-    testthat
+    testthat,
+    packrat

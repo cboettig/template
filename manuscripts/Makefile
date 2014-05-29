@@ -15,9 +15,9 @@ all:
 install: components/install.R
 	Rscript components/install.R
 
+
 $(MANUSCRIPT).md: $(MANUSCRIPT).Rmd
 	Rscript components/knit.R $(MANUSCRIPT).Rmd	
-
 
 ## Customize template, latex engine, etc here
 $(MANUSCRIPT).pdf: $(MANUSCRIPT).md
@@ -27,20 +27,25 @@ $(MANUSCRIPT).tex: $(MANUSCRIPT).md
 	pandoc -o $(MANUSCRIPT).tex --template=$(TEMPLATE) --biblio $(BIBLIO) --csl $(CSL) $(MANUSCRIPT).md
 
 
+restore-cache:  
+	make components/cache
+	
+clean:
+	rm -rf $(MANUSCRIPT).md 
+	make clear-packrat
+	make clear-cache
+
+clear-packrat: 
+	rm -rf .Rprofile .Renviron library/ packrat.sources/ 
+
+clear-cache:
+	rm -rf components/cache
+
 
 # Only runs if cache has been cleared
 components/cache: components/restore-cache.R
 	Rscript components/restore-cache.R
 
-# just an alias 
-restore-cache: 
-	make components/cache
-	
-clear-cache:
-	rm -rf components/cache
-
-clean:
-	rm -f $(MANUSCRIPT).md 
 
 
 # Non portable, just for me to update the source cache
