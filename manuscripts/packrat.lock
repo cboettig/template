@@ -1,0 +1,77 @@
+PackratFormat: 1.1
+PackratVersion: 0.1.0
+RVersion: 3.1.0
+Repos: http://cran.rstudio.com/
+
+Package: RCurl
+Source: CRAN
+Version: 1.95-4.1
+Requires: bitops
+
+Package: bitops
+Source: CRAN
+Version: 1.0-6
+
+Package: digest
+Source: CRAN
+Version: 0.6.4
+
+Package: evaluate
+Source: CRAN
+Version: 0.5.5
+Requires: stringr
+
+Package: formatR
+Source: CRAN
+Version: 0.10
+
+Package: highr
+Source: CRAN
+Version: 0.3
+
+Package: httr
+Source: github
+Version: 0.3
+Requires: RCurl, stringr, digest
+GithubRepo: httr
+GithubUsername: hadley
+GithubRef: master
+GithubSha1: 7e897fcd6b9e02756ce1ebd33c7c04ac3273a416
+
+Package: knitr
+Source: github
+Version: 1.5.32
+Requires: evaluate, digest, formatR, highr, markdown, stringr
+GithubRepo: knitr
+GithubUsername: yihui
+GithubRef: master
+GithubSha1: c3716ee5b980af595dd0f3eeef3e34092f5a86ca
+
+Package: markdown
+Source: CRAN
+Version: 0.7
+Requires: mime
+
+Package: mime
+Source: CRAN
+Version: 0.1.1
+
+Package: packrat
+Source: github
+Version: 0.1.0
+GithubRepo: packrat
+GithubUsername: rstudio
+GithubRef: master
+GithubSha1: 0e360b5c15d319b796a1d4fdc83a2c5ae7a67333
+
+Package: stringr
+Source: CRAN
+Version: 0.6.2
+
+Package: template
+Source: github
+Version: 0.0-1
+GithubRepo: template
+GithubUsername: cboettig
+GithubRef: master
+GithubSha1: df8a0a68c3a1db6f78fd0245dad3f85b7f27742e
