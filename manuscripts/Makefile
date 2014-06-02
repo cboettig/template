@@ -3,15 +3,11 @@ MANUSCRIPT=manuscript
 
 all:
 	make install
-	make restore-cache
 	make render
 	make ../README.md
 
 install: components/install.R
 	Rscript components/install.R
-	make library
-
-library:
 
 restore-cache:  
 	make components/cache
