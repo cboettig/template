@@ -54,6 +54,7 @@ opts_chunk$set(dev='pdf')
 A citation to @Xie2013
 
 ```{r include=FALSE}
+library("template")  # package should load itself, for packrat
 library("rmarkdown")
 library("knitcitations")
 options(citation_format = "pandoc")

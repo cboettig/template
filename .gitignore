@@ -1,9 +1,8 @@
 manuscripts/components/cache
 manuscripts/components/figure
-manuscripts/library
-manuscripts/packrat.sources
+manuscripts/packrat/lib
+manuscripts/packrat/src
 manuscripts/.Rprofile
-manuscripts/.Renviron
 manuscripts/*.pdf
 vignettes/*.pdf
 .Rproj.user

@@ -32,7 +32,7 @@ clean:
 	make clear-cache
 
 clear-packrat: 
-	rm -rf .Rprofile .Renviron library/ packrat.sources/ 
+	rm -rf .Rprofile packrat/lib packrat/src packrat/bootstrap.R
 
 clear-cache:
 	rm -rf components/cache

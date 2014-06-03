@@ -1,7 +1,33 @@
-PackratFormat: 1.1
-PackratVersion: 0.1.0.99
+PackratFormat: 1.2
+PackratVersion: 0.2.0.99
 RVersion: 3.1.0
-Repos: http://cran.rstudio.com/
+Repos: http://cran.rstudio.com/,
+  http://bioconductor.org/packages/2.14/bioc,
+  http://bioconductor.org/packages/2.14/data/annotation,
+  http://bioconductor.org/packages/2.14/data/experiment,
+  http://bioconductor.org/packages/2.14/extra
+
+Package: RCurl
+Source: CRAN
+Version: 1.95-4.1
+Requires: bitops
+
+Package: RJSONIO
+Source: CRAN
+Version: 1.2-0.2
+
+Package: Rcpp
+Source: CRAN
+Version: 0.11.1
+
+Package: RefManageR
+Source: CRAN
+Version: 0.8.1
+Requires: XML, RCurl, RJSONIO, plyr, bibtex, lubridate, stringr
+
+Package: XML
+Source: CRAN
+Version: 3.98-1.1
 
 Package: bibtex
 Source: CRAN
@@ -15,10 +41,10 @@ Package: devtools
 Source: github
 Version: 1.5
 Requires: httr, RCurl, memoise, whisker, evaluate, digest
-GithubRepo: devtools
-GithubUsername: hadley
-GithubRef: master
-GithubSha1: b6fda8144de4b145197c6d38aa6a1bb839678a5c
+GitHubRepo: devtools
+GitHubUsername: hadley
+GitHubRef: master
+GitHubSha1: b6fda8144de4b145197c6d38aa6a1bb839678a5c
 
 Package: digest
 Source: CRAN
@@ -41,19 +67,19 @@ Package: httr
 Source: github
 Version: 0.3
 Requires: RCurl, stringr, digest
-GithubRepo: httr
-GithubUsername: hadley
-GithubRef: master
-GithubSha1: 7e897fcd6b9e02756ce1ebd33c7c04ac3273a416
+GitHubRepo: httr
+GitHubUsername: hadley
+GitHubRef: master
+GitHubSha1: 7e897fcd6b9e02756ce1ebd33c7c04ac3273a416
 
 Package: knitcitations
 Source: github
-Version: 0.6-0
+Version: 0.6-2
 Requires: knitr, bibtex, RefManageR, xtable, RCurl, XML, httr
-GithubRepo: knitcitations
-GithubUsername: cboettig
-GithubRef: master
-GithubSha1: f7a77a81b413501e131dbbf212974fdde7201fc9
+GitHubRepo: knitcitations
+GitHubUsername: cboettig
+GitHubRef: master
+GitHubSha1: acf7798bd75e53d612fb06bf49aedb375b4e659e
 
 Package: knitr
 Source: CRAN
@@ -81,43 +107,25 @@ Version: 0.1.1
 
 Package: packrat
 Source: github
-Version: 0.1.0.99
-GithubRepo: packrat
-GithubUsername: rstudio
-GithubRef: master
-GithubSha1: f9f35fb50ad3e1909e9873eec0bb3c715e16c5ca
+Version: 0.2.0.99
+GitHubRepo: packrat
+GitHubUsername: rstudio
+GitHubRef: master
+GitHubSha1: 0c2951ef15e740bb679de4348dec5a31a3f62e7c
 
 Package: plyr
 Source: CRAN
 Version: 1.8.1
 Requires: Rcpp
 
-Package: Rcpp
-Source: CRAN
-Version: 0.11.1
-
-Package: RCurl
-Source: CRAN
-Version: 1.95-4.1
-Requires: bitops
-
-Package: RefManageR
-Source: CRAN
-Version: 0.8.1
-Requires: XML, RCurl, RJSONIO, plyr, bibtex, lubridate, stringr
-
-Package: RJSONIO
-Source: CRAN
-Version: 1.2-0.2
-
 Package: rmarkdown
 Source: github
 Version: 0.2.15
 Requires: knitr, yaml
-GithubRepo: rmarkdown
-GithubUsername: rstudio
-GithubRef: master
-GithubSha1: 154a17fbc14ca415f633924105613cbb91b8eae3
+GitHubRepo: rmarkdown
+GitHubUsername: rstudio
+GitHubRef: master
+GitHubSha1: 958b78cd70791bfb47782d333f549e1925e8b60b
 
 Package: stringr
 Source: CRAN
@@ -126,18 +134,14 @@ Version: 0.6.2
 Package: template
 Source: github
 Version: 0.0-1
-GithubRepo: template
-GithubUsername: cboettig
-GithubRef: master
-GithubSha1: df8a0a68c3a1db6f78fd0245dad3f85b7f27742e
+GitHubRepo: template
+GitHubUsername: cboettig
+GitHubRef: master
+GitHubSha1: df8a0a68c3a1db6f78fd0245dad3f85b7f27742e
 
 Package: whisker
 Source: CRAN
 Version: 0.3-2
-
-Package: XML
-Source: CRAN
-Version: 3.98-1.1
 
 Package: xtable
 Source: CRAN
