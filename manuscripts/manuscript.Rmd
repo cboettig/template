@@ -24,14 +24,17 @@ abstract: |
           Write the abstract of the paper here
 
 
+
+
 bibliography: components/references.bib
 csl: components/ecology.csl
-template: components/elsarticle.latex
 documentclass: components/elsarticle
 
 output: 
   pdf_document:
-    keep_tex: false
+    template: components/elsarticle.latex
+    keep_tex: true
+    fig_caption: true
 ---
 
 
@@ -50,15 +53,18 @@ opts_chunk$set(tidy=FALSE, warning=FALSE, message=FALSE,
 opts_chunk$set(dev='pdf')
 ```
 
-
-A citation to @Xie2013
-
-```{r include=FALSE}
+```{r libraries, include=FALSE, cache = FALSE}
 library("template")  # package should load itself, for packrat
 library("rmarkdown")
 library("knitcitations")
 options(citation_format = "pandoc")
 ```
+
+
+
+
+A citation to @Xie2013
+
 
 A dynamic citation to `r citet("10.1098/rspb.2013.1372")`.  
 
