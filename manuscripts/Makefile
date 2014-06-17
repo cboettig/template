@@ -16,15 +16,6 @@ render:
 	Rscript -e "rmarkdown::render('$(MANUSCRIPT).Rmd')"
 
 
-
-## These knit and pandoc calls depricated by rmarkdown::render
-$(MANUSCRIPT).md: $(MANUSCRIPT).Rmd
-	Rscript components/knit.R $(MANUSCRIPT).Rmd	
-$(MANUSCRIPT).pdf: $(MANUSCRIPT).md
-	pandoc -o $(MANUSCRIPT).pdf $(MANUSCRIPT).md
-$(MANUSCRIPT).tex: $(MANUSCRIPT).md
-	pandoc -o $(MANUSCRIPT).tex  $(MANUSCRIPT).md
-
 	
 clean:
 	rm -rf $(MANUSCRIPT).md 
@@ -55,6 +46,5 @@ deploy-cache:
 # Make package README from vignettes/tutorial (makefile command here just for convenience; since Makefiles in `vignettes/` are intended for building vignette output by tex etc, 
 ../README.md: ../vignettes/tutorial.Rmd
 	Rscript -e 'require(knitr); opts_knit[["set"]](upload.fun = imgur_upload); knit("../vignettes/tutorial.Rmd", "../README.md")'
-	Rscript components/github_highlighting.R ../README.md
 
 

@@ -5,7 +5,7 @@ title: "my title"
 author: 
   - name: Carl Boettiger
     affiliation: cstar
-    email: cboettig@gmail.com
+    email: cboettig(at)gmail.com
     footnote: Corresponding author
   - name: First Coauthor 
     affiliation: shortcode
