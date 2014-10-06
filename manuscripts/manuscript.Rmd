@@ -63,7 +63,7 @@ options(citation_format = "pandoc")
 
 
 
-A citation to @Xie2013
+A citation to @Xie_2013
 
 
 A dynamic citation to `r citet("10.1098/rspb.2013.1372")`.  
