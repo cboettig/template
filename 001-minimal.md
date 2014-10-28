@@ -1,9 +1,8 @@
 ---
-layout: page
-
+template: _layouts/default.html
+title: A minimal R Markdown example
+disqus: true
 ---
-
-# A minimal R Markdown example
 
 
 ## graphics

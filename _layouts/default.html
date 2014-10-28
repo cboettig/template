@@ -1,17 +1,49 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-  {% include head.html %}
-  <body prefix="dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/"> 
-    {% include navbar.html %}
-    <div class="container"> <!-- Responsive grid layout, doesn't jump to full-width --> 
+<html$if(lang)$ lang="$lang$"$endif$>
+<head> 
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+$for(author-meta)$
+  <meta name="author" content="$author-meta$">
+$endfor$
+$if(date-meta)$
+  <meta name="dcterms.date" content="$date-meta$">
+$endif$
+  <title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
+$for(css)$
+  <link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
+$endfor$
+  <link rel="alternate" type="application/rss+xml" title="$rss-title$" href="$rss$"/>
+$if(math)$
+  $math$
+$endif$
+</head>
+<body>
 
-{% include header.html %}
+<!-- le navbar -->
+$for(include-before)$
+$include-before$
+$endfor$
 
-{{ content }}
+<div class="container"> 
+$if(title)$
+<header>
+  <h1 class="entry-title">$title$</h1>
+$if(subtitle)$
+  <h1>$subtitle$</h1>
+$endif$
+</header>
+$endif$
 
-{% include footer.html %}
-{% include javascript.html %}
-{% include analytics.html %}
+
+$body$
+
+
+<!-- le footer-->
+$for(include-after)$
+$include-after$
+$endfor$
 
     </div>
   </body>

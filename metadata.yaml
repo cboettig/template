@@ -1,0 +1,14 @@
+---
+css: 
+  - http://www.carlboettiger.info/assets/css/bootstrap.min.css
+  - //netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css
+rss: http://www.carlboettiger.info/blog.xml
+rss-title: "Carl Boettiger's Lab Notebook"
+site.url: http://carlboettiger.info
+analytics: UA-18401403-1 
+author: 
+  name: Carl Boettiger
+  twitter: cboettig
+  github: cboettig
+navbar: _includes/navbar.html
+---
