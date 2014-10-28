@@ -1,10 +1,11 @@
 ---
-layout: page
-
+title: A minimal R Markdown example
+disqus: cboettig
 ---
 
-# A minimal R Markdown example
-
+```{r}
+knitr::opts_chunk$set(fig.path = "figure/")
+```
 
 ## graphics
 

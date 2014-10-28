@@ -8,6 +8,8 @@ html: $(HTML_FILES)
 
 %.html: %.Rmd
 	R --vanilla --slave -e "rmarkdown::render('$<')"
+	pandoc --template _layouts/default.html metadata.yaml -o $@ $(basename $<).md
+	rm $(basename $<).md
 
 %.html: %.md
 	pandoc --template _layouts/default.html metadata.yaml -o $@ $< 
