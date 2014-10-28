@@ -10,9 +10,7 @@ before_install:
 # install_aptget is quicker & more robust than install_deps
 # devtools (imports httr) & testthat are already installed as binaries...
 install:
-  - ./travis-tool.sh install_aptget r-cran-knitr 
-  - ./travis-tool.sh install_github rstudio/packrat cboettig/knitcitations 
-  - ./travis-tool.sh install_deps
+  - ./travis-tool.sh install_aptget r-cran-knitr r-cran-knitcitations 
 
 script: ./travis-tool.sh run_tests
 
