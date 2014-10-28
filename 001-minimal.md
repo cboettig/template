@@ -1,7 +1,7 @@
 ---
 template: _layouts/default.html
 title: A minimal R Markdown example
-disqus: true
+disqus: cboettig
 ---
 
 

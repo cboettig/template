@@ -1,4 +1,3 @@
-
 HTML_FILES := $(patsubst %.Rmd, %.html ,$(wildcard *.Rmd)) \
               $(patsubst %.md, %.html ,$(wildcard *.md))
 
@@ -11,7 +10,7 @@ html: $(HTML_FILES)
 	R --vanilla --slave -e "rmarkdown::render('$<')"
 
 %.html: %.md
-	pandoc --include-before-body _includes/navbar.html --include-after-body _includes/footer.html --template _layouts/default.html metadata.yaml -o $@ $< 
+	pandoc --template _layouts/default.html metadata.yaml -o $@ $< 
 
 
 .PHONY: clean
