@@ -1,9 +1,14 @@
 ---
 title: A minimal R Markdown example
 disqus: cboettig
+date-meta: `r Sys.Date()`
 ---
 
-```{r}
+<!-- We can define additional metadata dyanmically, at top or in separate yaml blocks-->
+
+
+
+```{r, include=FALSE}
 knitr::opts_chunk$set(fig.path = "figure/")
 ```
 

@@ -7,7 +7,7 @@ all: clean html
 html: $(HTML_FILES)
 
 %.html: %.Rmd
-	R --vanilla --slave -e "rmarkdown::render('$<')"
+	R --vanilla --slave -e "knitr::knit('$<')"
 	pandoc --template _layouts/default.html metadata.yaml -o $@ $(basename $<).md
 	rm $(basename $<).md
 
