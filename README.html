@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>gh-pages branch of template</title>
+  <link rel="stylesheet" href="http://www.carlboettiger.info/assets/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" type="text/css" />
+  <link rel="alternate" type="application/rss+xml" title="Carl Boettiger's Lab Notebook" href="http://www.carlboettiger.info/blog.xml"/>
+</head>
+<body>
+
+
+<!-- le navbar -->
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://www.carlboettiger.info/README.html"><i class="icon-info-sign" alt="info"></i></span></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+          <li >
+          <a href="http://www.carlboettiger.info/index.html">Home</a></li>
+          <li >
+          <a href="http://www.carlboettiger.info/vita.html">Vita</a></li>
+          <li >
+          <a href="http://www.carlboettiger.info/research.html">Research</a></li>
+          <li >
+          <a href="http://www.carlboettiger.info/teaching.html">Teaching</a></li>
+          <li >
+          <a href="http://www.carlboettiger.info/community.html">Community</a></li>
+          <li >
+          <a href="http://www.carlboettiger.info/lab-notebook.html">Lab Notebook</a></li>
+        </ul>
+        <form class="navbar-form navbar-right" role="search" method="get" action="http://google.com/search">
+          <div class="form-group">
+            <input type="hidden" name="q" value="site:carlboettiger.info" />
+            <input type="text" class="form-control search-query" name="q" placeholder="Search"/>
+          </div>
+          <button class="btn btn-mini" type="submit"><i class="icon-search"></i></button> 
+       </form>
+    </div><!--/.nav-collapse -->
+  </div> <!-- /container -->
+</nav>
+
+
+
+<!--a standard pandoc include block-->
+
+
+<div class="container"> 
+  
+<header>
+  <h1 class="entry-title">gh-pages branch of template</h1>
+</header>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-1">
+    <article>
+    <p>This branch hosts the <code>.Rmd</code> source scripts and output <code>.md</code> scripts produced by running analyses relevant to this project, usually based on functions from the R package on the master branch.</p>
+    <p>Any markdown results in this repository will then be rendered at <code>io.carlboettiger.info/&lt;reponame&gt;/&lt;filepath&gt;</code>.</p>
+    <p>This branch uses same top-level domain (carlboettiger.info) and the CSS styling of my labnotebook to mantain a consistent look and feel, but it is actually hosted independently from the notebook itself. My website proper lives on the <code>www</code> subdomain, with all the HTML sources coming from the gh-pages branch of my <a href="https://github.com/cboettig/labnotebook/">labnotebook repo</a>.</p>
+    <p>By setting my <code>cboettig.github.io</code> repo to the <code>io</code> subdomain instead, all <code>gh-pages</code> branches of other repos are now served from that subdomain, e.g. <code>io.carlboettiger.info/&lt;reponame&gt;</code>, instead of <code>cboettig.github.io/&lt;reponame&gt;</code>.</p>
+    <p>This branch then contains its own copies of the labnotebook <code>_layout</code> and <code>_includes</code> directories, which point to the <code>www</code> subdomain for the css assets. The <code>_config.yml</code> is quite minimal, just using <code>redcarpet</code> to provide github-like parsing.</p>
+    <p>Using redcarpet means we lose the ability to have pandoc-like citations, but can still add mathjax equations with <code>$$</code> (since markdown parser ignores that delimiter)</p>
+    <p><br /><span class="math">∫<sub>0</sub><sup>∞</sup><em>f</em>(<em>x</em>)<em>P</em>(<em>x</em>)<em>d</em><em>x</em></span><br /></p>
+    <p>though inline equations need <code>\(</code> syntax, which means escaping the backtick in the markdown, such as: \(F = ma \).</p>
+    <h2 id="an-.rmd-example">An <code>.Rmd</code> example</h2>
+    <p>This repo contains an example <code>.Rmd</code> file, <code>001-minimal.Rmd</code>. After knitting the file and commiting the output <code>.md</code> and <code>figure/</code> directory, the results are visible at the URL: <a href="http://io.carlboettiger.info/template/001-minimal">io.carlboettiger.info/template/001-miminal</a> (note that Github's internal <code>.htaccess</code> automatically handles the <code>.html</code> extension if it is ommited). The <code>.Rmd</code> file isn't parsed but is automatically available at <a href="http://io.carlboettiger.info/template/001-minimal.Rmd">io.carlboettiger.info/template/001-miminal.Rmd</a> (for which the browser will probably prompt you to download the file since it does not recognize the extension).</p>
+    <p>Of course the .Rmd is also avaiable at the standard Github page, <a href="https://github.com/cboettig/template/blob/gh-pages/001-minimal.Rmd">github.com/cboettig/template/blob/gh-pages/001-minimal.Rmd</a>, but the ability to just add <code>.Rmd</code> to the end of the URL may be a more convenient way of exposing the source file than having to generate the link.</p>
+    <p>Because we have used <code>svg</code> images, the markdown on the Github version, <a href="https://github.com/cboettig/template/blob/gh-pages/001-minimal.md">github.com/cboettig/template/blob/gh-pages/001-minimal.md</a>, does not show the images. We could solve this by telling knitr to use full instead relative URLs,</p>
+    <pre class="sourceCode r"><code class="sourceCode r">knit_opts$<span class="kw">set</span>(<span class="dt">base.url =</span> <span class="st">&quot;http://cboettig.github.io/templates/&quot;</span>)</code></pre>
+    <p>but that is rather cumbersome to remember. Worse, if we use Github.com to look at older versions of the <code>.md</code> file, we would still see the most recent image rather than the correct version. Consequently, it is probably better to use the simpler relative URLs and not worry about the Github rendered version (which after all, doesn't have our nice CSS, our mathjax support, disqus, and google analytics that we get from the HTML solution).</p>
+    <h2 id="accessing-earlier-versions">Accessing earlier versions</h2>
+    <p>As mentioned above, while we can use Github's online version history to look at our rendered markdown, images and equations will not display. We do better to checkout the commit of interest from the <code>gh-pages</code> branch, e.g.</p>
+    <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> checkout gh-pages
+    <span class="kw">git</span> checkout 2e418b
+    <span class="kw">jekyll</span> serve</code></pre>
+    <p>and view the site locally in the browser. (not ideal for novice users, admittedly).</p>
+    <p>(and then remember to return to master gh-pages branch when we're done)</p>
+    <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> checkout master</code></pre>
+    <h2 id="creating-project-landing-page">Creating project landing page</h2>
+    <p>Consider using the <code>README.md</code> from the project's master branch as a landing page for the project (e.g. appear at the project's base url, <code>http://io.carlboettiger.info/&lt;reponame&gt;</code>.</p>
+    <p>To do so automatically, just grab the file and rename it <code>index.md</code>, adding yaml layout if necessary; e.g.</p>
+    <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">wget</span> -O index.md https://raw.githubusercontent.com/cboettig/template/master/README.md
+    <span class="kw">(echo</span> -en <span class="st">&#39;---\nlayout: page\n---\n\n&#39;</span><span class="kw">;</span> <span class="kw">cat</span> index.md<span class="kw">)</span> <span class="kw">&gt;</span> <span class="kw">tmp</span>
+    <span class="kw">mv</span> tmp index.md</code></pre>
+    </article>
+  </div>
+</div>
+
+
+<!--a standard pandoc include block-->
+
+
+<!-- le footer-->
+<div class="row disqus">
+  <div class="col-md-8">          
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+          var disqus_shortname = 'cboettig'; 
+          (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="row" prefix="foaf: http://xmlns.com/foaf/0.1/">
+    <div class="col-md-3 col-xs-4 socialicons" style="font-size:20px" typeof="foaf:Person" about="#me">
+      <p>
+        <script type="text/javascript" src="http://www.carlboettiger.info/assets/js/obfuscate-email-link.js" language="javascript"></script> 
+        <a rel="foaf:account" alt="twitter" href="https://twitter.com/cboettig" 
+           onclick="recordOutboundLink(this, 'Outbound Links', 'Twitter'); 
+           return false;"><span class="showtooltip" title="follow me on twitter (reading, discussing)"><i class="icon-twitter"></i></span></a> 
+        <a rel="foaf:account" alt="github" href="https://github.com/cboettig" 
+           onclick="recordOutboundLink(this, 'Outbound Links', 'Github'); 
+           return false;"><span class="showtooltip" title="follow me on Github (code, research)"><i class="icon-github"></i></span></a>
+        <a alt="rss" rel="foaf:weblog", type="application/atom+xml" href="http://www.carlboettiger.info/blog.xml"  
+           class="showtooltip" title="RSS feeds for my blog-style entries. See the feed on my lab notebook (/atom.xml) to follow all entries instead." 
+           onclick="recordOutboundLink(this, 'Outbound Links', 'RSS'); 
+           return false;"><i class="icon-rss"></i></a>
+       </p>
+    </div>
+    
+    <!--**************** End social links **************************** -->
+
+    <div class="col-md-4 col-md-offset-1 col-xs-4">
+      <p><a onclick="recordOutboundLink(this, 'Outbound Links', 'ONS_claim'); return false;" href="http://onsclaims.wikispaces.com/"><img src="http://www.carlboettiger.info/assets/img/ons-aci2-icon.svg" alt="ONS" class="showtooltip" title="An Open Notebook Science (ONS) project claim: Entry provides all content (AC) immediately (I) or without significant delay.  See link for details"/></a></p>
+    </div>
+
+    <div class="col-md-3 col-md-offset-1 col-xs-4">
+      <p>
+      <a rel="license" property="http://creativecommons.org/ns#license" href="http://creativecommons.org/publicdomain/zero/1.0/" onclick="recordOutboundLink(this, 'Outbound Links', 'CC0'); return false;"><img src="http://www.carlboettiger.info/assets/img/cc-zero.svg" alt="CC0"/></a> 
+      </p>
+    </div>
+  </div>
+
+
+<span
+    class="Z3988" 
+    title="ctx_ver=Z39.88-2004
+    &amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc
+    &amp;rfr_id=info%3Asid%2Focoins.info%3Agenerator
+    &amp;rft.title=gh-pages branch of template
+    &amp;rft.creator=Carl Boettiger
+    &amp;rft.date=
+    &amp;rft.language=EN
+    &amp;rft.rights=CC0
+    &amp;rft_id=">
+</span>
+</footer>
+
+
+
+
+<!-- Le javascript 
+==================================================================-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "all"} } });       </script>
+
+<!-- Local copies  
+<script type="text/javascript" src="http://www.carlboettiger.info/assets/js/jquery.js"></script> 
+<script src="http://www.carlboettiger.info/assets/js/bootstrap.min.js"></script> 
+-->
+
+<!-- le analytics
+================================================================  --> 
+<script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-18401403-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+</script>
+<script type="text/javascript"> 
+function recordOutboundLink(link, category, action) {
+  try {
+    var pageTracker=_gat._getTracker("UA-18401403-1");
+    pageTracker._trackEvent(category, action);
+    setTimeout('document.location = "' + link.href + '"', 100)
+  }catch(err){}
+}
+</script>
+
+
+
+
+    </div>
+  </body>
+</html>
+
+    
