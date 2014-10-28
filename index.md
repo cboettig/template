@@ -1,5 +1,7 @@
 ---
-layout: page
+template: _layouts/default.html
+title: template
+disqus: cboettig
 ---
 
 <!--
@@ -8,9 +10,6 @@ layout: page
 -->
 
 [![Build Status](https://travis-ci.org/cboettig/template.svg)](https://travis-ci.org/cboettig/template)
-
-template
-========
 
 
 This repository is simply a template for my projects. It is structured as an [R package],

@@ -1,10 +1,8 @@
 ---
-layout: page
-
+template: _layouts/default.html
+title: gh-pages branch of template
+disqus: cboettig
 ---
-
-gh-pages branch of template
-===========================
 
 
 This branch hosts the `.Rmd` source scripts and output `.md`
