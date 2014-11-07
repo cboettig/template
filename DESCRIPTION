@@ -3,7 +3,7 @@ Title: Template repository for a research project structured as an R package on
     Github
 Description: Template repository for a research project structured as an R
     package on Github
-Version: 0.0-1
+Version: 0.0-2
 License: CC0
 Author: Carl Boettiger
 Maintainer: Carl Boettiger, <cboettig@gmail.com>
@@ -14,5 +14,4 @@ Suggests:
     knitr (>= 1.5),
     httr,
     testthat,
-    packrat,
     knitcitations (>= 0.6)
