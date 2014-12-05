@@ -17,6 +17,7 @@ The manual gives essentially no introduction to what appears to be a classic BUG
 
 ```{r}
 library(nimble)
+library(methods)
 pumpCode <- modelCode({
   for (i in 1:N){
     theta[i] ~ dgamma(alpha,beta)
