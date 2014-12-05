@@ -1,1 +1,1 @@
-knitr::knit("example.Rmd")
+knitr::knit("template/inst/examples/example.Rmd")
