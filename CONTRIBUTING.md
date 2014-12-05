@@ -90,8 +90,11 @@ file, which will embed online png images published to imgur for the
 
 **Citations**: Citations should be added to the `.Rmd` file using
 pandoc markdown notation, with the corresponding bibtex entries
-added to `citations.bib`. Citations can also be added as a standard
+added to `components/references.bib`. Citations can also be added as a standard
 markdown link.
+
+
+<!-- Just ship cache in Docker image? 
 
 **Caching** To avoid rerunning potentially slow R code embedded in the
 mansucript simply to view changes to the text, results from running the
@@ -102,7 +105,7 @@ command if the source file has changed.  Consequently, changes to to
 the package functions themselves will not automatically cause make to
 recompile the manuscript. If the package has an external archive of the
 cache, it can be restored to the last published version with `make restore-cache`.
-
+-->
 
 <!-- Should add a utility that will generate citation metadata from
 the mauscript.Rmd links using knitcitations.
