@@ -39,7 +39,7 @@ output:
 
 
 
-```{r caching, include=FALSE}
+``` {r caching, include=FALSE}
 library("methods")
 library("knitr")
 basename <- "manuscript"
@@ -53,7 +53,7 @@ opts_chunk$set(tidy=FALSE, warning=FALSE, message=FALSE,
 opts_chunk$set(dev='pdf')
 ```
 
-```{r libraries, include=FALSE, cache = FALSE}
+``` {r libraries, include=FALSE, cache = FALSE}
 library("template")  # package should load itself, for packrat
 library("rmarkdown")
 library("knitcitations")
@@ -71,7 +71,7 @@ A dynamic citation to `r citet("10.1098/rspb.2013.1372")`.
 
 # References
 
-```{r include=FALSE, echo=FALSE, results="hide"}
+``` {r include=FALSE, echo=FALSE, results="hide"}
 citet(citation("knitr")) # a citation that wasn't added dyanmically above
 write.bibtex(file="components/references.bib")
 ```
