@@ -1,41 +1,63 @@
-<!--
-%\VignetteEngine{knitr::knitr}
-%\VignetteIndexEntry{An Introduction to the template package}
--->
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+[![Travis-CI Build Status](https://travis-ci.org/cboettig/template.png?branch=master)](https://travis-ci.org/cboettig/template)
 
-[![Build Status](https://travis-ci.org/cboettig/template.svg)](https://travis-ci.org/cboettig/template)
+The template can be initialized with functions from devtools:
 
-template
-========
+``` r
+devtools::install_github("hadley/devtools")
+library("devtools")
+```
 
+Configure some default options for `devtools`, see `package?devtools`:
 
-This repository is simply a template for my projects. It is structured as an [R package],
-with a few additions:
+``` r
+options(devtools.name = "Carl Boettiger", 
+        devtools.desc.author = "Carl Boettiger <cboettig@gmail.com> [aut, cre]",
+        devtools.desc.license = "MIT + file LICENSE")
+```
 
-- Development and version history hosted on [Github]
-- a [manuscripts] directory, for writing R-markdown manuscripts and
-building them into pdfs and other formats using [pandoc]. 
-- Continuous integration and testing using [Travis CI]. 
+Run devtools templating tools
 
-(These are excluded when building the R package, see .Rbuildignore)
+``` r
+setup()
+use_testthat()
+use_vignette("intro")
+use_travis()
+use_package_doc()
+use_cran_comments()
+use_readme_rmd()
+```
 
+Additional modifications and things not yet automated by `devtools`:
 
+-   Add the now-required LICENSE template data
+-   add `covr` to the suggests list
 
-At this time, most of the template is dedicated to functions for dynamic
-documentation of the manuscript.  See [manuscripts/README] for more
-details about this functionality.  
+``` r
+writeLines(paste("YEAR: ", format(Sys.Date(), "%Y"), "\n", 
+                 "COPYRIGHT HOLDER: ", getOption("devtools.name"), sep=""),
+           con="LICENSE")
 
+use_package("covr", "suggests")
 
-**Note**: This README is created programmatically from [manuscripts/tutorial.Rmd],
-so edit that file and not the README itself.  (This lets the README include 
-executed R code and keeps it in sync with an R package vignette).  
+write(
+"
+r_binary_packages:
+  - testthat
+  - knitr
 
+r_github_packages:
+  - jimhester/covr
 
+after_success:
+  - Rscript -e 'library(covr); coveralls()'",
+file=".travis.yml", append=TRUE)
+```
 
-[manuscripts]: http://github.com/cboettig/template/tree/master/manuscripts/
-[manuscripts/README]: http://github.com/cboettig/template/tree/master/manuscripts/README.md
-[manuscripts/tutorial.Rmd]: http://github.com/cboettig/template/tree/master/manuscripts/tutorial.Rmd
-[R package]: http://cran.r-project.org/doc/manuals/R-exts.html "Writing R Extensions"
-[pandoc]: http://johnmacfarlane.net/pandoc 
-[Github]: http://github.com
-[Travis CI]: https://travis-ci.org/
+### Manual modifications
+
+Further steps aren't yet automated in devtools or by me; as it's easier to add these manually to the template and then use the template when starting a new project.
+
+-   add the travis shield to README, (as prompted to do by `add_travis()`)
+-   Turn on repo at coveralls.io and add the shield to README
+-   adding additional dependencies to DESCRIPTION with `use_package`, and also add to `.travis.yml` manually, e.g. under `r_binary_packages:`, `r_github_packages`, or `r_packages`

@@ -1,9 +1,4 @@
-.git
-.gitignore
-.travis.yml
-manuscripts
-CONTRIBUTING.md
-LICENSE
-
-^.*\.Rproj$
-^\.Rproj\.user$
+^\.travis\.yml$
+^cran-comments\.md$
+^README\.Rmd$
+^README-.*\.png$
