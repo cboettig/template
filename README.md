@@ -12,7 +12,7 @@ Configure some default options for `devtools`, see `package?devtools`:
 
 ``` r
 options(devtools.name = "Carl Boettiger", 
-        devtools.desc.author = "Carl Boettiger <cboettig@gmail.com> [aut, cre]",
+        devtools.desc.author = "person('Carl', 'Boettiger', email='cboettig@gmail.com', role = c('aut', 'cre'))",
         devtools.desc.license = "MIT + file LICENSE")
 ```
 

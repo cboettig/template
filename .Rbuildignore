@@ -2,3 +2,5 @@
 ^cran-comments\.md$
 ^README\.Rmd$
 ^README-.*\.png$
+^.*\.Rproj$
+^\.Rproj\.user$
