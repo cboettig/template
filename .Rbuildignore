@@ -4,3 +4,5 @@
 ^README-.*\.png$
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^CONTRIBUTING\.md$
+

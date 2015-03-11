@@ -82,3 +82,8 @@ Further steps aren't yet automated in devtools or by me; as it's easier to add t
 -   Turn on repo at coveralls.io and add the shield to README
 -   adding additional dependencies to DESCRIPTION with `use_package`, and also add to `.travis.yml` manually, e.g. under `r_binary_packages:`, `r_github_packages`, or `r_packages`
 -   add additional data with `use_data()` or possibly `use_raw_data()` (for scripts that import and clean data first)
+
+Manuscript elements
+-------------------
+
+-   Recent developments in `rmarkdown`, `knitr` and `rticles` packages greatly faciliates using vignettes as full manuscripts. The above step adds only a basic HTML templated vignette. This package includes a template for a latex/pdf manuscript using these tools. The actual template appropriate for a project may be better selected from (possibly my fork of) the `rticles` templates.
