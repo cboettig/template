@@ -1,10 +1,5 @@
-manuscripts/components/cache
-manuscripts/components/figure
-manuscripts/.Rprofile
-manuscripts/*.tex
-manuscripts/*.pdf
-vignettes/*.pdf
 .Rproj.user
-*.Rproj
-*/*.Rhistory
 .Rhistory
+.RData
+inst/doc
+vignettes/*_cache/

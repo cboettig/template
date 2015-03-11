@@ -57,32 +57,21 @@ Likewise, the README.md file in the base directory should not be edited
 directly.  This file is created automatically from code that runs the
 examples shown, helping to ensure that they are functioning as advertised
 and consistent with the package README vignette.  Instead, edit the
-`README.Rmd` source file in `inst/doc/pubs` and run `make` to build
-the README.
-
+`README.Rmd` source file and compile it with the RStudio knit 
+button (ctrl+shift+k) or `rmarkdown::render()` . 
 
 
 Manuscript
 ----------
 
-The manuscript files are built using the dynamic documentation tool
-`knitr` from the `.Rmd` versions of the file.  Please do not edit
-the `.md` versions since such files are built automatically.
-The `.md` versions are built for viewing on Github, and take advantage
-of Github's rendering and display of text-based diffs.  The `.md`
-files should then be generated using the `Makefile` provided, which
-will also handle details such as Github-compatible syntax highlighting
-and the embedding of images.
+The manuscript files are found in the vignettes directory.
 
-The `Makefile` will also generate a pdf version of the manuscript
-using pandoc and the appropriate LaTeX templates.
 
 Text should be hard-wrapped at less than 80 characters width when
 possible. This allows git to better track real changes to the files
-and impoves the display of line-based diffs.  For this reason,
+and improves the display of line-based diffs.  For this reason,
 also avoid re-wrapping text frequently, or changing line end encodings,
 etc.
-
 
 **Embedding images**: Image generation is handled by the markdown
 file, which will embed online png images published to imgur for the
@@ -118,13 +107,13 @@ http://blog.martinfenner.org/2013/07/30/citeproc-yaml-for-bibliographies/#commen
 Branches
 --------
 
-Please ensure that any pull requests are made to the relevant branch (probably `devel`).
+Please ensure that any pull requests are made to the relevant branch.
 
 
 Questions or comments?
 ---------------------
 
-Do not hesistate to open an issue in the issues tracker to raise any
+Do not hesitate to open an issue in the issues tracker to raise any
 questions or comments about the package or these guidelines.
 
 

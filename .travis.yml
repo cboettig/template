@@ -1,28 +1,19 @@
-language: c
+# Sample .travis.yml for R projects
 
-before_install:
-  - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
-  - chmod 755 ./travis-tool.sh
-  - ./travis-tool.sh bootstrap
-
-# install_aptget is quicker & more robust than install_deps
-# devtools (imports httr) & testthat are already installed as binaries...
-install:
-  - ./travis-tool.sh install_aptget r-cran-knitr r-cran-knitcitations r-cran-testthat r-cran-httr 
-
-script: ./travis-tool.sh run_tests
-
-on_failure:
-  - ./travis-tool.sh dump_logs
-
-
-env:
- global:
-   - R_BUILD_ARGS="--no-manual"
-   - R_CHECK_ARGS="--as-cran --no-manual" # PDF Manual needs more recent tex, slow and unnecessary
-   - BOOTSTRAP_LATEX="" # set to 1 only if we need more recent tex envir (slow!)
+language: r
+warnings_are_errors: true
 
 notifications:
   email:
     on_success: change
-    on_failure: always 
+    on_failure: change
+
+r_apt_packages:
+  - testthat
+  - knitr
+
+r_github_packages:
+  - jimhester/covr
+
+after_success:
+  - Rscript -e 'library(covr); coveralls()'

@@ -1,41 +1,89 @@
-<!--
-%\VignetteEngine{knitr::knitr}
-%\VignetteIndexEntry{An Introduction to the template package}
--->
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+[![Travis-CI Build Status](https://travis-ci.org/cboettig/template.png?branch=master)](https://travis-ci.org/cboettig/template)
 
-[![Build Status](https://travis-ci.org/cboettig/template.svg)](https://travis-ci.org/cboettig/template)
+This repository provides the current template I use for new research projects.
 
-template
-========
+Why an R package structure?
+---------------------------
 
+Academic research isn't software development, and there are many other templates for how to organize a research project. So why follow an R package layout? Simply put, this is because the layout of an R package is familiar to a larger audience and allows me to leverage a rich array of tools that don't exist for more custom approaches.
 
-This repository is simply a template for my projects. It is structured as an [R package],
-with a few additions:
+"But"", you say, "a paper doesn't have unit tests, or documented functions! Surely that's a lot of needless overhead in doing this!?"
 
-- Development and version history hosted on [Github]
-- a [manuscripts] directory, for writing R-markdown manuscripts and
-building them into pdfs and other formats using [pandoc]. 
-- Continuous integration and testing using [Travis CI]. 
+Exactly...
 
-(These are excluded when building the R package, see .Rbuildignore)
+While there is certainly no need to use all the elements of a package in every research project, or even to have a package that can pass `devtools::check()` or even `devtools::install()` for it to be useful. Most generic layout advice starts sounding like an R package pretty quickly: have a directory for `data/`, a separate one for `R/` scripts, another one for the manuscript files, and so forth. [Temple Lang and Gentleman (2007)]( "http://doi.org/10.1198/106186007X178663") advance the proposal for using the R package structure as a "Research Compendium," an idea that has since caught on with many others.
 
+As a project grows in size and collaboration, having the more rigid structure offered by a package format becomes increasingly valuable. Packages can automate installation of dependencies, perform checks that changes have not broken code, and provide a modular and highly tested framework for collecting together the three essential elements: data, code, and manuscript-quality documentation, in a powerful and feature-rich environment.
 
+Steps to create the template
+----------------------------
 
-At this time, most of the template is dedicated to functions for dynamic
-documentation of the manuscript.  See [manuscripts/README] for more
-details about this functionality.  
+To use this template, I will usually clone this repo and just remove the `.git` record, starting off a new project accordingly. Here I document the steps used to set up this template from scratch, which permits a slightly more modular approach. If this were fully automated it would be preferable to copying, but has not yet reached that stage.
 
+The template can be initialized with functions from devtools:
 
-**Note**: This README is created programmatically from [manuscripts/tutorial.Rmd],
-so edit that file and not the README itself.  (This lets the README include 
-executed R code and keeps it in sync with an R package vignette).  
+``` r
+devtools::install_github("hadley/devtools")
+library("devtools")
+```
 
+Configure some default options for `devtools`, see `package?devtools`:
 
+``` r
+options(devtools.name = "Carl Boettiger", 
+        devtools.desc.author = "person('Carl', 'Boettiger', email='cboettig@gmail.com', role = c('aut', 'cre'))",
+        devtools.desc.license = "MIT + file LICENSE")
+```
 
-[manuscripts]: http://github.com/cboettig/template/tree/master/manuscripts/
-[manuscripts/README]: http://github.com/cboettig/template/tree/master/manuscripts/README.md
-[manuscripts/tutorial.Rmd]: http://github.com/cboettig/template/tree/master/manuscripts/tutorial.Rmd
-[R package]: http://cran.r-project.org/doc/manuals/R-exts.html "Writing R Extensions"
-[pandoc]: http://johnmacfarlane.net/pandoc 
-[Github]: http://github.com
-[Travis CI]: https://travis-ci.org/
+Run devtools templating tools
+
+``` r
+setup()
+use_testthat()
+use_vignette("intro")
+use_travis()
+use_package_doc()
+use_cran_comments()
+use_readme_rmd()
+```
+
+Additional modifications and things not yet automated by `devtools`:
+
+-   Add the now-required LICENSE template data
+-   add `covr` to the suggests list
+
+``` r
+writeLines(paste("YEAR: ", format(Sys.Date(), "%Y"), "\n", 
+                 "COPYRIGHT HOLDER: ", getOption("devtools.name"), sep=""),
+           con="LICENSE")
+
+use_package("covr", "suggests")
+
+write(
+"
+r_binary_packages:
+  - testthat
+  - knitr
+
+r_github_packages:
+  - jimhester/covr
+
+after_success:
+  - Rscript -e 'library(covr); coveralls()'",
+file=".travis.yml", append=TRUE)
+```
+
+### Further steps that aren't automated
+
+Further steps aren't yet automated in devtools or by me; as it's easier to add these manually to the template and then use the template when starting a new project.
+
+-   add the travis shield to README, (as prompted to do by `add_travis()`)
+-   Turn on repo at coveralls.io and add the shield to README
+-   adding additional dependencies to DESCRIPTION with `use_package`, and also add to `.travis.yml` manually, e.g. under `r_binary_packages:`, `r_github_packages`, or `r_packages`
+-   add additional data with `use_data()` or possibly `use_raw_data()` (for scripts that import and clean data first)
+
+Manuscript elements
+-------------------
+
+-   Recent developments in `rmarkdown`, `knitr` and `rticles` packages greatly faciliates using vignettes as full manuscripts. The above step adds only a basic HTML templated vignette. This package includes a template for a latex/pdf manuscript using these tools. The actual template appropriate for a project may be better selected from (possibly my fork of) the `rticles` templates.
