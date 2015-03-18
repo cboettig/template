@@ -10,3 +10,4 @@ Suggests: testthat,
     knitr,
     covr
 VignetteBuilder: knitr
+

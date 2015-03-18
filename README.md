@@ -1,5 +1,5 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![Travis-CI Build Status](https://travis-ci.org/cboettig/template.png?branch=master)](https://travis-ci.org/cboettig/template)
+[![Travis-CI Build Status](https://travis-ci.org/cboettig/template.svg?branch=master)](https://travis-ci.org/cboettig/template) [![Coverage Status](https://coveralls.io/repos/cboettig/template/badge.svg)](https://coveralls.io/r/cboettig/template)
 
 This repository provides the current template I use for new research projects.
 
