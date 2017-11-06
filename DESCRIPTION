@@ -1,11 +1,14 @@
 Package: template
-Title: What the Package Does (one line, title case)
+Title: Package Title (one line, title case)
 Version: 0.0.0.9000
 Authors@R: person("Carl", "Boettiger", 
                   email = "cboettig@gmail.com", 
                   role = c("aut", "cre", "cph"),
                   comment=c(ORCID = "http://orcid.org/0000-0002-1642-628X"))
-Description: What the package does (one paragraph)
+Description: This package is a template for my research projects using the R
+             package structure (research compendium).  This package also includes
+             a helpful template function to deploy the template as a new repository
+             with a different name.  
 Depends: R (>= 3.1.2)
 License: MIT + file LICENSE
 LazyData: true
@@ -13,4 +16,7 @@ Suggests: testthat,
     knitr,
     covr
 VignetteBuilder: knitr
-
+Imports: 
+    git2r,
+    gh
+RoxygenNote: 6.0.1
