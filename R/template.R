@@ -15,7 +15,7 @@ library(git2r)
 #' @examples
 #' \dontrun{
 #' template("https://github.com/cboettig/template",
-#'          "https://gtihub.com/boettiger-lab/mypkg")
+#'          "https://github.com/boettiger-lab/mypkg")
 #' }
 template <- function(template, dest, public = FALSE, ...){
   repo <- git2r::clone(template)
